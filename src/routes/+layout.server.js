@@ -1,0 +1,12 @@
+// src/routes/+layout.server.ts
+/** @type {import('./$types').LayoutServerLoad} */
+
+export const load = async ({ locals: { safeGetSession }, cookies }) => {
+  const { session, user } = await safeGetSession()
+
+  return {
+    session,
+    user,
+    cookies: cookies.getAll(),
+  }
+}
