@@ -26,5 +26,6 @@
 
 <div class="container">
 	<HeaderMenu {session} />
+	<h1>DEV</h1>
 	<slot />
 </div>
