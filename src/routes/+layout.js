@@ -20,8 +20,6 @@ export const load = async ({ fetch, data, depends }) => {
         cookies: {
           getAll() {
             if (data) {
-              console.log(data)
-              console.log(data.cookies)
               return data.cookies
             }
           },
