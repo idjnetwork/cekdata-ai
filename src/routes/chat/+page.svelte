@@ -1,6 +1,6 @@
 <script module>
-    import '@n8n/chat/style.css';
-    import { createChat } from '@n8n/chat';
+    // import '@n8n/chat/style.css';
+    // import { createChat } from '@n8n/chat';
 
     
 </script>
@@ -8,30 +8,30 @@
 <script>
     import { onMount } from 'svelte'
 
-    onMount(()=> {
-        createChat({
-            webhookUrl: 'https://idjn.app.n8n.cloud/webhook/53c136fe-3e77-4709-a143-fe82746dd8b6/chat',
-            mode: 'fullscreen',
-            target: '#chat',
-            defaultLanguage: 'id',
-            initialMessages: [
-                'Halo 👋',
-                'Apa yang bisa saya bantu hari ini?'
-            ],
-            i18n: {
-                id: {
-                    // title: 'Hi there! 👋',
-                    // subtitle: "Start a chat. We're here to help you 24/7.",
-                    footer: '',
-                    getStarted: 'New Conversation',
-                    inputPlaceholder: 'Tulis pertanyaanmu...',
-                },
-            },
-    });
-    })
+    // onMount(()=> {
+    //     createChat({
+    //         webhookUrl: 'https://idjn.app.n8n.cloud/webhook/53c136fe-3e77-4709-a143-fe82746dd8b6/chat',
+    //         mode: 'fullscreen',
+    //         target: '#chat',
+    //         defaultLanguage: 'id',
+    //         initialMessages: [
+    //             'Halo 👋',
+    //             'Apa yang bisa saya bantu hari ini?'
+    //         ],
+    //         i18n: {
+    //             id: {
+    //                 // title: 'Hi there! 👋',
+    //                 // subtitle: "Start a chat. We're here to help you 24/7.",
+    //                 footer: '',
+    //                 getStarted: 'New Conversation',
+    //                 inputPlaceholder: 'Tulis pertanyaanmu...',
+    //             },
+    //         },
+    //     });
+    // })
 </script>
 
-<section id="chat"></section>
+<!-- <section id="chat"></section> -->
 
 <style>
     section {
