@@ -19,7 +19,9 @@ export const load = async ({ fetch, data, depends }) => {
         },
         cookies: {
           getAll() {
-            return data.cookies
+            if (data.cookies) {
+              return data.cookies
+            }
           },
         },
       })
