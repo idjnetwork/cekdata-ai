@@ -55,11 +55,12 @@ export const actions = {
       avatarUrl,
     }
   },
+  
   signout: async ({ locals: { supabase, safeGetSession } }) => {
     const { session } = await safeGetSession()
-    if (session) {
-      await supabase.auth.signOut()
-      redirect(303, '/')
-    }
+      if (session) {
+        await supabase.auth.signOut()
+        redirect(303, '/')
+      }
   },
 }

@@ -1,5 +1,6 @@
 <script>
-	// import '../styles.css'
+	import '../app.css'
+
 	import { invalidate } from '$app/navigation'
 	import { onMount } from 'svelte'
 	import HeaderMenu from '$lib/HeaderMenu.svelte'
@@ -7,6 +8,7 @@
 	export let data
 
 	let { supabase, session } = data
+
 	$: ({ supabase, session } = data)
 
 	onMount(() => {
@@ -21,11 +23,18 @@
 </script>
 
 <svelte:head>
-	<title>User Management</title>
+	<title>Cekdata.ai</title>
 </svelte:head>
 
 <div class="container">
 	<HeaderMenu {session} />
-	<h1>DEV</h1>
 	<slot />
 </div>
+
+<style>
+	.container {
+		display: flex;
+		flex-direction: column;
+		height:100dvh;
+	}
+</style>

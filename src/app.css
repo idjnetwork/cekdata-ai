@@ -1,0 +1,10 @@
+* {
+    --color-bg-1:#fff0e0;
+    --color-bg-2:#fffbf6;
+}
+
+body {
+    background-color: var(--color-bg-2);
+    font-family: sans-serif;
+    margin:0;
+}

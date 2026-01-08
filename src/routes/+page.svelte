@@ -1,8 +1,5 @@
 <script>
 	import { enhance } from '$app/forms'
-	// import type { ActionData, SubmitFunction } from './$types.js'
-
-	// export let form
 
 	let loading = false
 
@@ -15,43 +12,37 @@
 	}
 </script>
 
-<svelte:head>
-	<title>User Management</title>
-</svelte:head>
+<section>
+	<!-- <a class='link-article' href='/signup'>Sign Up</a> -->
+	<h1><span style:color="#f65d9b">cekdata</span>.ai</h1>
+	<a class='signin' href='/signin'>Sign In</a>
+</section>
 
-<!-- <a class='link-article' href='/signup'>Sign Up</a> -->
-<a class='link-article' href='/signin'>Sign In</a>
-
-<!-- fire Actions on +page.server.js -->
-<!-- <form class="row flex flex-center" method="POST" use:enhance={handleSubmit}>
-	<div class="col-6 form-widget">
-		<h1 class="header">Supabase + SvelteKit</h1>
-		<p class="description">Sign in via magic link with your email below</p>
-		{#if form?.message !== undefined}
-		<div class="success {form?.success ? '' : 'fail'}">
-			{form?.message}
-		</div>
-		{/if}
-		<div>
-			<label for="email">Email address</label>
-			<input
-				id="email"
-				name="email"
-				class="inputField"
-				type="email"
-				placeholder="Your email"
-				value={form?.email ?? ''}
-			/>
-		</div>
-		{#if form?.errors?.email}
-		<span class="flex items-center text-sm error">
-			{form?.errors?.email}
-		</span>
-		{/if}
-		<div>
-			<button class="button primary block">
-				{ loading ? 'Loading' : 'Send magic link' }
-			</button>
-		</div>
-	</div>
-</form> -->
+<style>
+	h1 {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 800;
+		font-size: 4rem;
+		margin-top:0;
+	}
+	section {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+	.signin {
+		background-color: #f65d9b;
+		padding:1rem;
+		border-radius: 0.3rem;
+		color:white;
+		text-decoration: none;
+		width:320px;
+		text-align: center;
+		transition:background-color 200ms ease-in-out;
+	}
+	.signin:hover {
+		background-color: #fc7fb1;
+	}
+</style>

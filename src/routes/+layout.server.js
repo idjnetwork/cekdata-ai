@@ -1,12 +1,24 @@
 // src/routes/+layout.server.ts
-/** @type {import('./$types').LayoutServerLoad} */
 
-export const load = async ({ locals: { safeGetSession }, cookies }) => {
-  const { session, user } = await safeGetSession()
+import { fail, redirect } from '@sveltejs/kit'
 
-  return {
-    session,
-    user,
-    cookies: cookies.getAll(),
+/** @type {import('./types').PageServerLoad} */
+
+export const load = async ({ locals: { supabase, safeGetSession } }) => {
+  const { session } = await safeGetSession()
+
+  // if (!session) {
+  //   redirect(303, '/')
+  // }
+
+  if (session) {
+    // const { data: profile } = await supabase
+    //   .from('profiles')
+    //   .select(`username, full_name, website, avatar_url`)
+    //   .eq('id', session.user.id)
+    //   .single()
+  
+    return { session }
   }
 }
+
