@@ -3,10 +3,14 @@
 </script>
 
 <nav>
-    <a  href='/'><span style:color="#f65d9b">cekdata</span>.ai</a>
+    <div class="spacer"></div>
+    <a href='/about' class="menu">Menu</a>
+    <a href='/'><span style:color="#f65d9b">cekdata</span>.ai</a>
     <!-- {#if session}
     <a  href='/account'>sign out</a>
     {/if} -->
+    <a  href='/account' class="menu" class:disabled={!session}>Profile</a>
+    <div class="spacer"></div>
 </nav>
 
 <style>
@@ -29,5 +33,14 @@
         margin:auto;
         font-size:1.2rem;
         font-weight:800;
+    }
+    .spacer {
+        width:50px;
+    }
+    .menu {
+        font-weight:400
+    }
+    .disabled {
+        color:transparent;
     }
 </style>

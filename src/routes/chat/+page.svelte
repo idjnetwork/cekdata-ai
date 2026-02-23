@@ -1,12 +1,44 @@
 <script module>
     import '@n8n/chat/style.css';
-    import { createChat } from '@n8n/chat';
-
-    
+    import { createChat } from '@n8n/chat';    
 </script>
 
 <script>
     import { onMount } from 'svelte'
+
+    function addCopyButtons() {
+        const messages = document.querySelectorAll(".chat-message-from-bot");
+
+        messages.forEach((msg) => {
+            if (msg.querySelector(".copy-btn")) return;
+
+            const btnContainer = document.createElement("div")
+
+            btnContainer.style.display = "flex"
+            btnContainer.style.justifyContent="flex-end"
+
+            const btn = document.createElement("button");
+            btn.innerText = "Copy";
+            btn.className = "copy-btn";
+
+            btn.style.backgroundColor="#FFF9F3"
+            btn.style.border="none"
+            btn.style.borderRadius="0.3rem"
+            btn.style.fontSize="0.7rem"
+            btn.style.padding="0.5rem"
+            btn.style.color="#B48F68"
+            btn.style.cursor="pointer"
+
+            btn.onclick = () => {
+                let text = msg.querySelector("p")
+                navigator.clipboard.writeText(text.innerText);
+                btn.innerText = "Copied!";
+                setTimeout(() => btn.innerText = "Copy", 1500);
+            };
+            btnContainer.appendChild(btn)
+            msg.appendChild(btnContainer);
+        })        
+    }
 
     onMount(()=> {
         createChat({
@@ -28,6 +60,16 @@
                 },
             },
         });
+
+        // observe new messages
+        const observer = new MutationObserver(addCopyButtons);
+
+        console.log(observer)
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
     })
 </script>
 
@@ -36,6 +78,8 @@
 <style>
     section {
         height:100%;
+        width:88%;
+        margin:1rem auto;
     }
     :root {
         --chat--color--primary: #e74266;
@@ -74,8 +118,8 @@
 
         --chat--textarea--height: 50px;
 
-        --chat--message--font-size: 1rem;
-        --chat--message--padding: var(--chat--spacing);
+        --chat--message--font-size: 0.8rem;
+        --chat--message--padding: 0.5rem /*var(--chat--spacing)*/;
         --chat--message--border-radius: var(--chat--border-radius);
         --chat--message-line-height: 1.8;
         --chat--message--bot--background: #fff0e0 /*var(--chat--color-white)*/;
@@ -92,6 +136,9 @@
         --chat--toggle--color: var(--chat--color-white);
         --chat--toggle--size: 64px;
 
+        --chat--input--font-size:0.8rem;
+        --chat--message--list:var(var(--chat--spacing))
+
 
     }
     :global(.chat-header) {
@@ -100,6 +147,18 @@
 
     #chat {
         height:calc(100% - 50px);
-        margin-top:50px;
+        margin-top:calc(50px + 1rem);
+        border:solid 1px var(--chat--color-light-shade-100);
+        box-shadow: 5px 5px #fff0e0;
+    }
+    button.copy-btn {
+        background-color: #f65d9b;
+		padding:1rem;
+		border-radius: 0.3rem;
+		color:white;
+		text-decoration: none;
+		text-align: center;
+		transition:background-color 200ms ease-in-out;
+		border:none;
     }
 </style>

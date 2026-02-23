@@ -5,11 +5,20 @@
 
 	let loading = false
 
+	let passChange
+
 	const handleSubmit = () => {
 		loading = true
 		return async ({ update }) => {
 			update()
 			loading = false
+		}
+	}
+	function showPassword(e) {
+		if (e.target.checked) {
+			passChange.type = "text"
+		} else {
+			passChange.type = "password"
 		}
 	}
 </script>
@@ -46,6 +55,7 @@
 				<label for="email">password:</label>
 				<br>
 				<input
+					bind:this={passChange}
 					id="password"
 					name="password"
 					class="inputField"
@@ -53,6 +63,9 @@
 					placeholder="Your password"
 					value={form?.password ?? ''}
 				/>
+				<div class="show-password">
+					<input id="show-pass" type="checkbox" onchange={showPassword}/><label for="show-pass">show password</label>
+				</div>
 			</div>
 			{#if form?.errors?.email}
 			<span class="flex items-center text-sm error">
@@ -123,5 +136,13 @@
 		padding:0.2rem;
 		color:#f03b83;
 		margin-bottom:1rem;
+	}
+	.show-password {
+		display: flex;
+		align-items: center;
+	}
+	input[type=checkbox] {
+		width:1rem;
+		height:1rem;
 	}
 </style>

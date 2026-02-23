@@ -4,6 +4,7 @@
 	import { invalidate } from '$app/navigation'
 	import { onMount } from 'svelte'
 	import HeaderMenu from '$lib/HeaderMenu.svelte'
+	import Footer from '$lib/Footer.svelte'
 
 	export let data
 
@@ -29,6 +30,7 @@
 <div class="container">
 	<HeaderMenu {session} />
 	<slot />
+	<Footer />
 </div>
 
 <style>

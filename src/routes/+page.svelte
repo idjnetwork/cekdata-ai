@@ -16,6 +16,12 @@
 	<!-- <a class='link-article' href='/signup'>Sign Up</a> -->
 	<h1><span style:color="#f65d9b">cekdata</span>.ai</h1>
 	<a class='signin' href='/signin'>Sign In</a>
+	<br>
+	<a class='signin' href='/about'>Our Methodology</a>
+
+	<!-- <h1>Testimoni</h1>
+	<h1>News</h1> -->
+
 </section>
 
 <style>

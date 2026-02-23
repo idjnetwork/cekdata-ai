@@ -33,7 +33,7 @@
 
 <section>
 	<div class="form-widget">
-		<form
+		<!-- <form
 			class="form-widget"
 			method="POST"
 			action="?/update"
@@ -68,11 +68,11 @@
 					disabled={loading}
 				/>
 			</div>
-		</form>
+		</form> -->
 	
 		<form method="POST" action="?/signout" use:enhance={handleSignOut}>
 			<div>
-				<button class="button block" disabled={loading}>Sign Out</button>
+				<button class="button block signout" disabled={loading}>Sign Out</button>
 			</div>
 		</form>
 	</div>
@@ -82,5 +82,31 @@
 	section {
 		height:calc(100% - 50px);
         margin-top:50px;
+	}
+	.signout {
+		background-color: #f65d9b;
+		padding:1rem;
+		border-radius: 0.3rem;
+		color:white;
+		text-decoration: none;
+		width:300px;
+		text-align: center;
+		transition:background-color 200ms ease-in-out;
+		border:none;
+		margin-top:1rem;
+	}
+	.signout:hover {
+		background-color: #fc7fb1;
+		border:none;
+	}
+	.form-widget {
+		width:100vw;
+		padding:1rem;
+		font-family: 'Montserrat', sans-serif;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
 	}
 </style>
