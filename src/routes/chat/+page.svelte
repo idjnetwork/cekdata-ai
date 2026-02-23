@@ -9,7 +9,10 @@
     function addCopyButtons() {
         const messages = document.querySelectorAll(".chat-message-from-bot");
 
-        messages.forEach((msg) => {
+        messages.forEach((msg, id) => {
+            if (msg.innerText.includes("Halo 👋") && id == 0) return;
+            if (msg.innerText.includes("Apa yang bisa saya bantu hari ini?") && id == 1) return;
+            if (msg.querySelector(".chat-message-typing-body")) return;
             if (msg.querySelector(".copy-btn")) return;
 
             const btnContainer = document.createElement("div")
@@ -60,6 +63,8 @@
                 },
             },
         });
+
+        document.querySelector(".chat-layout").style.height="calc(100vh - 150px)"
 
         // observe new messages
         const observer = new MutationObserver(addCopyButtons);
