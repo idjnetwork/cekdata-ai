@@ -71,6 +71,8 @@
 		</form> -->
 	
 		<form method="POST" action="?/signout" use:enhance={handleSignOut}>
+			<h1>Halo,</h1>
+			<h3>{session.user.email}</h3>
 			<div>
 				<button class="button block signout" disabled={loading}>Sign Out</button>
 			</div>
@@ -101,12 +103,15 @@
 	}
 	.form-widget {
 		width:100vw;
-		padding:1rem;
+		/* padding:1rem; */
 		font-family: 'Montserrat', sans-serif;
 		display: flex;
 		flex-direction: column;
 		height: 100%;
 		justify-content: center;
 		align-items: center;
+	}
+	form > h1, h3 {
+		text-align: center;
 	}
 </style>
