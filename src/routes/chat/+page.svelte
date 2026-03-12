@@ -1,6 +1,6 @@
 <script module>
-    import '@n8n/chat/style.css';
-    import { createChat } from '@n8n/chat';    
+    // import '@n8n/chat/style.css';
+    // import { createChat } from '@n8n/chat';    
 </script>
 
 <script>
@@ -78,7 +78,7 @@
     // })
 </script>
 
-<section id="chat"></section>
+<!-- <section id="chat"></section> -->
 
 <style>
     section {
