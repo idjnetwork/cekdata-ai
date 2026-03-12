@@ -1,12 +1,9 @@
 <script module>
-    import '@n8n/chat/style.css';
-// import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+    import '$lib/chat.css';
+    import { createChat } from '$lib/chat.js';
 </script>
 
-<script>
-    // import { createChat } from '@n8n/chat';
-    import { createChat } from '$lib/chat.js';
-    
+<script>  
     import { onMount } from 'svelte'
 
     // ADD COPY BUTTON ON CHAT REPLIES
@@ -151,6 +148,9 @@
     }
     :global(.chat-header) {
         display:none !important;
+    }
+    :global(.chat-inputs) {
+        align-items: center !important;
     }
 
     #chat {
