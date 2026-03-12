@@ -57,8 +57,6 @@
             ],
             i18n: {
                 id: {
-                    // title: 'Hi there! 👋',
-                    // subtitle: "Start a chat. We're here to help you 24/7.",
                     footer: '',
                     getStarted: 'New Conversation',
                     inputPlaceholder: 'Tulis pertanyaanmu...',
@@ -71,7 +69,7 @@
         // observe new messages
         const observer = new MutationObserver(addCopyButtons);
 
-        console.log(observer)
+        // console.log(observer)
 
         observer.observe(document.body, {
             childList: true,
