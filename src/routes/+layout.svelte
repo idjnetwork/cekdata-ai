@@ -3,7 +3,6 @@
 
 	import { invalidate } from '$app/navigation'
 	import { onMount } from 'svelte'
-	import { browser } from '$app/environment';
 	import HeaderMenu from '$lib/HeaderMenu.svelte'
 	import Footer from '$lib/Footer.svelte'
 
@@ -14,16 +13,13 @@
 	$: ({ supabase, session } = data)
 
 	onMount(() => {
-		if (browser) {
-			const { data } = supabase.auth.onAuthStateChange((event, newSession) => {
-				if (newSession?.expires_at !== session?.expires_at) {
-					invalidate('supabase:auth')
-				}
-			})
-	
-			return () => data.subscription.unsubscribe()
+		const { data } = supabase.auth.onAuthStateChange((event, newSession) => {
+			if (newSession?.expires_at !== session?.expires_at) {
+				invalidate('supabase:auth')
+			}
+		})
 
-		}
+		return () => data.subscription.unsubscribe()
 	})
 
 </script>

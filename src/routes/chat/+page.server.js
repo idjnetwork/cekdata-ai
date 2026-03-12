@@ -9,6 +9,5 @@ export const load = async ({ url, locals: { safeGetSession } }) => {
     //   if (session) {
     //     redirect(303, '/chat')
     //   }
-    console.log(url.origin, url)
     return { url: url.origin }
 }

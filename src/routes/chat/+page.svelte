@@ -45,37 +45,37 @@
     }
 
     // CREATE CHAT FROM N8N ON ONMOUNT (AFTER ALL DOMs LOADED)
-    onMount(() => {
-        createChat({
-                webhookUrl: 'https://idjn.app.n8n.cloud/webhook/53c136fe-3e77-4709-a143-fe82746dd8b6/chat',
-                mode: 'fullscreen',
-                target: '#chat',
-                defaultLanguage: 'id',
-                initialMessages: [
-                    'Halo 👋',
-                    'Apa yang bisa saya bantu hari ini?'
-                ],
-                i18n: {
-                    id: {
-                        footer: '',
-                        getStarted: 'New Conversation',
-                        inputPlaceholder: 'Tulis pertanyaanmu...',
-                    },
-                },
-            });
-    
-            document.querySelector(".chat-layout").style.height="calc(100vh - 154px - 1rem - 1rem)"
-    
-            // observe new messages
-            const observer = new MutationObserver(addCopyButtons);
-    
-            // console.log(observer)
-    
-            observer.observe(document.body, {
-                childList: true,
-                subtree: true
-            });
-    })
+    // onMount(() => {
+    //     createChat({
+    //         webhookUrl: 'https://idjn.app.n8n.cloud/webhook/53c136fe-3e77-4709-a143-fe82746dd8b6/chat',
+    //         mode: 'fullscreen',
+    //         target: '#chat',
+    //         defaultLanguage: 'id',
+    //         initialMessages: [
+    //             'Halo 👋',
+    //             'Apa yang bisa saya bantu hari ini?'
+    //         ],
+    //         i18n: {
+    //             id: {
+    //                 footer: '',
+    //                 getStarted: 'New Conversation',
+    //                 inputPlaceholder: 'Tulis pertanyaanmu...',
+    //             },
+    //         },
+    //     });
+
+    //     document.querySelector(".chat-layout").style.height="calc(100vh - 154px - 1rem - 1rem)"
+
+    //     // observe new messages
+    //     const observer = new MutationObserver(addCopyButtons);
+
+    //     // console.log(observer)
+
+    //     observer.observe(document.body, {
+    //         childList: true,
+    //         subtree: true
+    //     });
+    // })
 </script>
 
 <section id="chat"></section>
