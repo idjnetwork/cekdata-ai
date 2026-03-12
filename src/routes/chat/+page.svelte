@@ -66,7 +66,7 @@
             },
         });
 
-        document.querySelector(".chat-layout").style.height="calc(100vh - 150px)"
+        document.querySelector(".chat-layout").style.height="calc(100vh - 154px - 1rem - 1rem)"
 
         // observe new messages
         const observer = new MutationObserver(addCopyButtons);
@@ -167,5 +167,11 @@
 		text-align: center;
 		transition:background-color 200ms ease-in-out;
 		border:none;
+    }
+
+    @media (max-width: 450px) {
+        #chat {
+            height:calc(100vh - 154px - 1rem - 1rem);
+        }
     }
 </style>

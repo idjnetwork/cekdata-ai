@@ -43,4 +43,15 @@
     .disabled {
         color:transparent;
     }
+    @media (max-width: 450px) {
+        nav {
+            justify-content: space-evenly;
+        }
+        .spacer {
+            display: none;
+        }
+        .menu {
+            font-size: 1rem;
+        }
+    }
 </style>

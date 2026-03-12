@@ -82,7 +82,7 @@
 
 <style>
 	section {
-		height:calc(90vh - 50px);
+		height:calc(80vh - 50px);
         margin-top:50px;
 	}
 	.signout {
