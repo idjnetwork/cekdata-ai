@@ -7,9 +7,9 @@ import { fail, redirect } from '@sveltejs/kit'
 export const load = async ({ locals: { supabase, safeGetSession } }) => {
   const { session } = await safeGetSession()
 
-  // if (!session) {
-  //   redirect(303, '/')
-  // }
+  if (!session) {
+    redirect(303, '/signin')
+  }
 
   if (session) {
     // const { data: profile } = await supabase

@@ -6,6 +6,7 @@
 <script>
     import { onMount } from 'svelte'
 
+    // ADD COPY BUTTON ON CHAT REPLIES
     function addCopyButtons() {
         const messages = document.querySelectorAll(".chat-message-from-bot");
 
@@ -43,6 +44,7 @@
         })        
     }
 
+    // CREATE CHAT FROM N8N ON ONMOUNT (AFTER ALL DOMs LOADED)
     onMount(()=> {
         createChat({
             webhookUrl: 'https://idjn.app.n8n.cloud/webhook/53c136fe-3e77-4709-a143-fe82746dd8b6/chat',

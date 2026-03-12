@@ -42,6 +42,15 @@ export const handle = async ({ event, resolve }) => {
       return { session: null, user: null }
     }
 
+    // console.log(" ")
+    // console.log("===================================")
+    // console.log(session)
+    // console.log(" ")
+    // console.log("HOOKS")
+    // console.log(" ")
+    // console.log(user)
+    // console.log("===================================")
+    // console.log(" ")
     return { session, user }
   }
 
