@@ -34,7 +34,7 @@
 	section {
 		display: flex;
 		flex-direction: column;
-		height: 100%;
+		height: 80vh;
 		justify-content: center;
 		align-items: center;
 	}
