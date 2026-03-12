@@ -5,6 +5,9 @@
 
 <script>
     import { onMount } from 'svelte'
+    import {invalidateAll} from '$app/navigation'
+
+    invalidateAll()
 
     // ADD COPY BUTTON ON CHAT REPLIES
     function addCopyButtons() {
