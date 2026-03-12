@@ -12,6 +12,8 @@
 
 	$: ({ supabase, session } = data)
 
+	$: console.log(session)
+
 	onMount(() => {
 		const { data } = supabase.auth.onAuthStateChange((event, newSession) => {
 			if (newSession?.expires_at !== session?.expires_at) {
