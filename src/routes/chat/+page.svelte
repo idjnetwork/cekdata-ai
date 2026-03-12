@@ -2,8 +2,9 @@
 </script>
 
 <script>
-    import '@n8n/chat/style.css';
-    import { createChat } from '@n8n/chat';    
+    // import '@n8n/chat/style.css';
+    import { createChat } from '@n8n/chat';
+
     import { onMount } from 'svelte'
 
     // ADD COPY BUTTON ON CHAT REPLIES
